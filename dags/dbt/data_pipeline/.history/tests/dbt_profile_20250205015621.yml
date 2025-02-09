@@ -1,0 +1,9 @@
+models:
+  snowflake_workshop:
+    staging:
+      materialized: view
+      snowflake_warehouse: dbt_wh
+    marts:
+      materialized: table
+      snowflake_warehouse: dbt_wh
+      

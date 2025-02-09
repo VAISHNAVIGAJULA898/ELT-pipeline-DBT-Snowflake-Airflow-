@@ -1,0 +1,14 @@
+dbt_pipeline:  # This should match the `profile` name in dbt_project.yml
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: hf74826.us-east-2.aws   # e.g., xyz12345.us-east-2
+      user: "VAISHNAVIGAJULA"         # e.g., john_doe
+      password: "Usa@12345678"          # or use an env var for security
+      role: "accountadmin"                     # Your Snowflake role
+      database: "dbt_db"                    # Snowflake database
+      warehouse: "dbt_wh"                   # Snowflake warehouse
+      schema: "PUBLIC"                 # Schema for dbt models
+      threads: 4
+  client_session_keep_alive: false
