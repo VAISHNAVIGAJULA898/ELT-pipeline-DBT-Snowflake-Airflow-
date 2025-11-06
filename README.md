@@ -52,4 +52,3 @@ The primary objective was to utilize existing data in **Snowflake** and build a 
 
 ---
 
-Would you like me to make this more **technical (with architecture diagram explanation and DAG details)** or **resume/GitHub portfolio style (shorter and results-focused)?**
