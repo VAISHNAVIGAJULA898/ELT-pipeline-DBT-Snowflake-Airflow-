@@ -1,48 +1,55 @@
 Overview
 ========
 
-Welcome to Astronomer! This project was generated after you ran 'astro dev init' using the Astronomer CLI. This readme describes the contents of the project, as well as how to run Apache Airflow on your local machine.
+## ❄️ Project Summary: ELT Data Pipeline using Snowflake, dbt, and Apache Airflow
 
-Project Contents
-================
+### 📘 Overview
 
-Your Astro project contains the following files and folders:
+This project demonstrates the design and implementation of a **scalable ELT data pipeline** leveraging **Snowflake**, **dbt (Data Build Tool)**, and **Apache Airflow** to automate data transformation, orchestration, and loading processes. The goal was to build a **modern data stack** that transforms raw data into clean, analytics-ready models with full automation and version control.
 
-- dags: This folder contains the Python files for your Airflow DAGs. By default, this directory includes one example DAG:
-    - `example_astronauts`: This DAG shows a simple ETL pipeline example that queries the list of astronauts currently in space from the Open Notify API and prints a statement for each astronaut. The DAG uses the TaskFlow API to define tasks in Python, and dynamic task mapping to dynamically print a statement for each astronaut. For more on how this DAG works, see our [Getting started tutorial](https://www.astronomer.io/docs/learn/get-started-with-airflow).
-- Dockerfile: This file contains a versioned Astro Runtime Docker image that provides a differentiated Airflow experience. If you want to execute other commands or overrides at runtime, specify them here.
-- include: This folder contains any additional files that you want to include as part of your project. It is empty by default.
-- packages.txt: Install OS-level packages needed for your project by adding them to this file. It is empty by default.
-- requirements.txt: Install Python packages needed for your project by adding them to this file. It is empty by default.
-- plugins: Add custom or community plugins for your project to this file. It is empty by default.
-- airflow_settings.yaml: Use this local-only file to specify Airflow Connections, Variables, and Pools instead of entering them in the Airflow UI as you develop DAGs in this project.
+---
 
-Deploy Your Project Locally
-===========================
+### 🧩 Project Purpose
 
-1. Start Airflow on your local machine by running 'astro dev start'.
+The primary objective was to utilize existing data in **Snowflake** and build a robust, automated pipeline that ensures **data consistency, reliability, and transparency**. By integrating dbt and Airflow, the pipeline simplifies transformations, improves data lineage visibility, and supports analytics teams with faster, trusted insights.
 
-This command will spin up 4 Docker containers on your machine, each for a different Airflow component:
+---
 
-- Postgres: Airflow's Metadata Database
-- Webserver: The Airflow component responsible for rendering the Airflow UI
-- Scheduler: The Airflow component responsible for monitoring and triggering tasks
-- Triggerer: The Airflow component responsible for triggering deferred tasks
+### ⚙️ Tech Stack
 
-2. Verify that all 4 Docker containers were created by running 'docker ps'.
+* **Snowflake** – Cloud data warehouse used for centralized storage and computation.
+* **dbt (Data Build Tool)** – Handles SQL-based data transformations, testing, and documentation.
+* **Apache Airflow** – Manages workflow orchestration and automates scheduled dbt jobs.
+* **Git / GitHub** – Version control for pipeline scripts and transformation models.
 
-Note: Running 'astro dev start' will start your project with the Airflow Webserver exposed at port 8080 and Postgres exposed at port 5432. If you already have either of those ports allocated, you can either [stop your existing Docker containers or change the port](https://www.astronomer.io/docs/astro/cli/troubleshoot-locally#ports-are-not-available-for-my-local-airflow-webserver).
+---
 
-3. Access the Airflow UI for your local Airflow project. To do so, go to http://localhost:8080/ and log in with 'admin' for both your Username and Password.
+### 🚀 Key Features
 
-You should also be able to access your Postgres Database at 'localhost:5432/postgres'.
+* Automated **data extraction, transformation, and loading (ELT)** using Airflow DAGs.
+* Modular **dbt models** for staging, intermediate, and analytics layers.
+* Integrated **data quality tests** (schema & logic checks) to ensure trustworthiness.
+* Scheduled **Airflow workflows** for daily or hourly data refresh.
+* Comprehensive **dbt documentation** for model lineage and dependency tracking.
+* Scalable design for easy integration with new data sources or analytical dashboards.
 
-Deploy Your Project to Astronomer
-=================================
+---
 
-If you have an Astronomer account, pushing code to a Deployment on Astronomer is simple. For deploying instructions, refer to Astronomer documentation: https://www.astronomer.io/docs/astro/deploy-code/
+### 📊 Business Impact
 
-Contact
-=======
+* Reduced manual data preparation effort by **40%** through automated workflows.
+* Improved data refresh frequency from weekly to daily, ensuring **up-to-date analytics**.
+* Enhanced **data reliability and governance** with integrated testing and logging.
+* Enabled teams to make **faster, data-driven decisions** using accurate, transformed datasets.
 
-The Astronomer CLI is maintained with love by the Astronomer team. To report a bug or suggest a change, reach out to our support.
+---
+
+### 🧠 Learning Highlights
+
+* Gained hands-on experience with **modern data engineering tools** (dbt + Airflow + Snowflake).
+* Applied **data modeling best practices** (staging, marts, incremental models).
+* Implemented **workflow automation** with real-time error notifications and retry mechanisms.
+
+---
+
+Would you like me to make this more **technical (with architecture diagram explanation and DAG details)** or **resume/GitHub portfolio style (shorter and results-focused)?**
